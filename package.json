@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.11.2",
     "bootstrap": "4.0.0",
     "cra-template": "1.1.3",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.0",
     "react-dom": "^17.0.2",
-    "react-popper": "0.9.2",
+    "react-popper": "^2.2.5",
     "react-scripts": "5.0.0",
-    "reactstrap": "5.0.0"
+    "reactstrap": "^9.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/reactstrap": "^8.7.2"
   }
 }
