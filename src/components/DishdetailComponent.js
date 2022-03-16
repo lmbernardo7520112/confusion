@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText, CardImgOverlay } from 'reactstrap';
 import { DISHES } from '../shared/dishes';
 
@@ -76,7 +76,7 @@ class DishDetail extends Component {
     
         
         return(
-            <div class="container">
+            <div className="container">
                 <div className='row'>
                     <div className='col-12'>
                         {dishItem}
