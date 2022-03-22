@@ -5,7 +5,7 @@ import DishDetail from './DishdetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { DISHES } from '../shared/dishes';
-import { Routes, Route, Navigate, Router } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 class Main extends Component {
 
