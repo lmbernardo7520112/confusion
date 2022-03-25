@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@types/reactstrap": "^8.7.2"
+    "@types/reactstrap": "^8.7.2",
+    "web-vitals": "^2.1.4"
   }
 }
