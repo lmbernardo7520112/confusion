@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import Contact from './ContactComponent';
-//import DishDetail from './DishdetailComponent';
+import DishDetail from './DishdetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { DISHES } from '../shared/dishes';
@@ -36,6 +36,13 @@ class Main extends Component {
         );
       }
   
+      const DishWithId = ({ match }) => {
+        return(
+          <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
+            comments={this.state.comments.filter((comment) => comment.dishId === parseInt(match.paramsdishId,10))}
+           />
+        );
+      }
 
       return (
         <div className="Main">
@@ -43,6 +50,7 @@ class Main extends Component {
             <Routes>
               <Route path="/home" element={<HomePage />} />
               <Route exact path="/menu" element={<Menu dishes={this.state.dishes} />} />
+              <Route path="/menu/:dishId" element={<DishWithId />} /> 
               <Route path="*" element={<Navigate to="/home" />} />
               <Route exact path="/contactus" element={<Contact />} />
             </Routes>
