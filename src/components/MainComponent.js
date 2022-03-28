@@ -9,7 +9,7 @@ import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 
 
 class Main extends Component {
@@ -36,10 +36,11 @@ class Main extends Component {
         );
       }
   
-      const DishWithId = ({ match }) => {
+      const DishWithId = () => {
+        const { dishId } = useParams();
         return(
-          <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
-            comments={this.state.comments.filter((comment) => comment.dishId === parseInt(match.paramsdishId,10))}
+          <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(dishId,10))[0]}
+            comments={this.state.comments.filter((comment) => comment.dishId === parseInt(dishId,10))}
            />
         );
       }
