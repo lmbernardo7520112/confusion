@@ -1,17 +1,5 @@
-//import React, { Component } from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-//import { DISHES } from '../shared/dishes';
 import { Link } from 'react-router-dom';
-
-//class DishDetail extends Component {
-
-    //constructor(props) {
-        //super(props);
-        //this.state = {
-            //dishes: DISHES,
-        //};
-    //}
-
 
     function RenderDish({dish}) {
         return (

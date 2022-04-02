@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import Contact from './ContactComponent';
+import About from './AboutComponent';
 import DishDetail from './DishdetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
@@ -10,6 +11,7 @@ import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 import { Routes, Route, Navigate, useParams } from 'react-router-dom';
+
 
 
 class Main extends Component {
@@ -54,6 +56,7 @@ class Main extends Component {
               <Route path="/menu/:dishId" element={<DishWithId />} /> 
               <Route path="*" element={<Navigate to="/home" />} />
               <Route exact path="/contactus" element={<Contact />} />
+              <Route exact path="/aboutus" element={<About />} />
             </Routes>
           <Footer />
         </div>
