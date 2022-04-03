@@ -9,32 +9,34 @@ import { Link } from 'react-router-dom';
 
 
 function RenderLeader({leader}) {
-    return(
-        <div key={leader.id} className="col-12 mt-5">
-            <ul className="list-unstyled">
-                <li className="media">
-                    <img className="mr-3" src={leader.image} alt={leader.name} />
-                    <div className="media-body" >
-                    <h5 className="mt-0 mb-1">{leader.name}</h5>
-                        <p>{leader.designation}</p>
-                        <p>{leader.description}</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    );
-}
+    
+        return (
+            <div key={leader.id} className="col-12 mt-5">
+                <ul className="list-unstyled">
+                    <li className="media">
+                        <img className="mr-3" src={leader.image} alt={leader.name} />
+                        <div className="media-body" >
+                        <h5 className="mt-0 mb-1">{leader.name}</h5>
+                            <p>{leader.designation}</p>
+                            <p>{leader.description}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    )};
+    
 
-function About(props) {
+
+const About = (props) => {
 
     const leaders = props.leaders && props.leaders.map((leader) => {
-        return (
-            <div key={leader.id} className="col-12 col-md-5 m-1">
-                <p>Leader {leader.name}</p>
-                <RenderLeader leaders={props.leaders}/>
-            </div>
-        );
-    });
+    return (
+        <div key={leader.id} className="col-12 col-md-5 m-1">
+            <p>Leader {leader.name}</p>
+            <RenderLeader leader={leader}/>
+        </div>
+    );
+});
 
     return(
         <div className="container">
