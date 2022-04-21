@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Button, Form, FormGroup, Label, Input, Col, Row, FormFeedback } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 class  Contact extends Component {
@@ -13,7 +13,13 @@ class  Contact extends Component {
             email:'',
             agree: false,
             contactType:'Tel.',
-            message:''
+            message:'',
+            touched: {
+                firstname: false,
+                lastaname: false,
+                telnum: false,
+                email: false
+            }
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -33,6 +39,21 @@ class  Contact extends Component {
         console.log("Current State is: " + JSON.stringify(this.state));
         alert("Current State is: " + JSON.stringify(this.state));
         event.preventDefault();
+    }
+
+    handleblur = (field) => (evt) => {
+        this.setState({
+            touched: { ...this.state.touched, [field]: true }
+        });
+    }
+
+    validate(firstname, lastaname, telnum, email) {
+        const errors = {
+            firstname:'',
+            lastname:'',
+            telnum:'',
+            email:''
+        };
     }
 
     render() {
